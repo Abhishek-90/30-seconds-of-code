@@ -62,4 +62,6 @@ Code:
 
 <p>
     Time Complexity for Cyclic sort is O(n) where n is size of array.
+
+    Note: Cyclic sort is also applicable for element in range [1,n], but in that case, element at position i should i+1. It means that element at position 0 will be 1, element at position 1 will be 2 and so on.
 </p>
