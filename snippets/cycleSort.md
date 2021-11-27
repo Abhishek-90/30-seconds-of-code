@@ -36,26 +36,28 @@ Code:
 
 </p>
 
-let array = new Array(2,4,5,1,3,0);
+    let array = new Array(2,4,5,1,3,0);
 
-let start = 0;
+    let start = 0;
 
-while(start < array.length){
-    if(array[start] === start){
-        start++; //if (element at position i) == i, the element is at its rightful position, so simply increment it.
+    function cyclicSort(){
+        while(start < array.length){
+            if(array[start] === start){
+                start++; //if (element at position i) == i, the element is at its rightful position, so simply increment it.
+            }
+            else{
+                //if (element at i) !== i, put the element at i, at arr[arr[i]]
+                //say, element at index postion 0 is 2, swap arr[0] (i.e 2) with arr[arr[0]]
+                //it makes arr[2] = 2(condition for sorted sequence) and arr[0] will be equal to arr[2](before swapping)
+
+                let temp = arr[start];
+                arr[start = arr[arr[start]]];
+                arr[arr[start]] = temp;
+
+                //don't increment start yet, as swap at position start might not have set arr[start] to right value. 
+            }
+        }
     }
-    else{
-        //if (element at i) !== i, put the element at i, at arr[arr[i]]
-        //say, element at index postion 0 is 2, swap arr[0] (i.e 2) with arr[arr[0]]
-        //it makes arr[2] = 2(condition for sorted sequence) and arr[0] will be equal to arr[2](before swapping)
-
-        let temp = arr[start];
-        arr[start = arr[arr[start]]];
-        arr[arr[start]] = temp;
-
-        //don't increment start yet, as swap at position start might not have set arr[start] to right value. 
-    }
-}
 
 
 <p>
